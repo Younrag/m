@@ -23,7 +23,7 @@ void p_char(stack_t **stack, unsigned int line_num)
  * @stack: Pointer to a pointer to top node of the stack.
  * @line_num: The line number of of the opcode.
  */
-void print_str(stack_t **stack, __attribute__((unused))unsigned int line_num)
+void p_str(stack_t **stack, __attribute__((unused))unsigned int line_num)
 {
 	int ascii;
 	stack_t *tmp;
