@@ -72,7 +72,7 @@ void error_2(int err_code, ...)
 				va_arg(ag, int));
 			break;
 		case 8:
-			l_num = va_arg(ag, unsigned int);
+			l = va_arg(ag, unsigned int);
 			op = va_arg(ag, char *);
 			fprintf(stderr, "L%d: can't %s, stack too short\n", l, op);
 			break;
