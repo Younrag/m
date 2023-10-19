@@ -136,7 +136,7 @@ void call_f(op_func func, char *op, char *value, int line_num, int format)
 	flag = 1;
 	if (strcmp(op, "push") == 0)
 	{
-		if (val != NULL && value[0] == '-')
+		if (value != NULL && value[0] == '-')
 		{
 			value = value + 1;
 			flag = -1;
