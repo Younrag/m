@@ -34,64 +34,64 @@ void swap(stack_t **stack, unsigned int line_num)
 }
 
 /**
- * add_nodes - Adds the top two elements of the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * add_n - Adds the top two elements of the stack.
+ * @stack: Pointer to a pointer to top node of the stack.
+ * @line_num: The line number of of the opcode.
  */
-void add_nodes(stack_t **stack, unsigned int line_number)
+void add_n(stack_t **stack, unsigned int line_num)
 {
-	int sum;
+	int add;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		more_err(8, line_number, "add");
+		error_2(8, line_num, "add");
 
 	(*stack) = (*stack)->next;
-	sum = (*stack)->n + (*stack)->prev->n;
-	(*stack)->n = sum;
+	add = (*stack)->n + (*stack)->prev->n;
+	(*stack)->n = add;
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
 
 
 /**
- * sub_nodes - Adds the top two elements of the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * sub_n - Subbs the top two elements of the stack.
+ * @stack: Pointer to a pointer node of the stack.
+ * @line_num: The line number of of the opcode.
  */
-void sub_nodes(stack_t **stack, unsigned int line_number)
+void sub_n(stack_t **stack, unsigned int line_num)
 {
-	int sum;
+	int sub;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 
-		more_err(8, line_number, "sub");
+		error_2(8, line_num, "sub");
 
 
 	(*stack) = (*stack)->next;
-	sum = (*stack)->n - (*stack)->prev->n;
-	(*stack)->n = sum;
+	sub = (*stack)->n - (*stack)->prev->n;
+	(*stack)->n = sub;
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
 
 
 /**
- * div_nodes - Adds the top two elements of the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * div_n - Div the top two elements of the stack.
+ * @stack: Pointer to a pointer to top node of the stack.
+ * @line_num: The line number of of the opcode.
  */
-void div_nodes(stack_t **stack, unsigned int line_number)
+void div_n(stack_t **stack, unsigned int line_num)
 {
-	int sum;
+	int div;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		more_err(8, line_number, "div");
+		error_2(8, line_num, "div");
 
 	if ((*stack)->n == 0)
-		more_err(9, line_number);
+		error_2(9, line_num);
 	(*stack) = (*stack)->next;
-	sum = (*stack)->n / (*stack)->prev->n;
-	(*stack)->n = sum;
+	div = (*stack)->n / (*stack)->prev->n;
+	(*stack)->n = div;
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
