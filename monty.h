@@ -46,7 +46,6 @@ typedef void (*op_func)(stack_t **, unsigned int);
 void open_f(char *file_name);
 int sep_line(char *buffer, int line_number, int format);
 void read_f(FILE *);
-int len_chars(FILE *);
 void find_f(char *, char *, int, int);
 
 /*Stack operations*/
